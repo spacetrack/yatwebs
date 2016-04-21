@@ -87,12 +87,18 @@ func fileServer(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	port := ""
+
+	if len(os.Args) > 1 {
+		port = ":" + os.Args[1]
+	}
+
 	fmt.Println("yatwebs - Yet Another Tiny Web Server (version 0.9.0)")
 	fmt.Println()
-	fmt.Println("starting http server on \"http://localhost/\".")
+	fmt.Println("starting http server on \"http://localhost" + port + "/\".")
 	fmt.Println("press CTRL+c for stopping.")
 	fmt.Println()
 
 	http.HandleFunc("/", fileServer)
-	http.ListenAndServe(":80", nil)
+	http.ListenAndServe(port, nil)
 }
