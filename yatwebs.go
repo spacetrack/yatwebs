@@ -93,7 +93,7 @@ func main() {
 		port = ":" + os.Args[1]
 	}
 
-	fmt.Println("yatwebs - Yet Another Tiny Web Server (version 0.9.0)")
+	fmt.Println("yatwebs - Yet Another Tiny Web Server (version 0.9.1)")
 	fmt.Println()
 	fmt.Println("starting http server on \"http://localhost" + port + "/\".")
 	fmt.Println("press CTRL+c for stopping.")
